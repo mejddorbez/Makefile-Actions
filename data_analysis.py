@@ -37,7 +37,7 @@ sns.displot(df["Happiness Score"])
 plt.title("Distribution of Happiness Score")
 plt.xlabel("Happiness Score")
 plt.ylabel("Frequency")
-plt.savefig("figures/happiness_score_distribution.png")
+plt.savefig("./figures/happiness_score_distribution.png")
 
 # Top 20 countries by Happiness Score
 top_20_countries = df.nlargest(20, "Happiness Score")
