@@ -2,6 +2,7 @@ import argparse
 import logging
 import os
 import warnings
+import mlflow
 
 warnings.filterwarnings('ignore')
 import torch
@@ -31,6 +32,9 @@ def main(args):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model.to(device)
 
+    # MLflow URI from environment variables
+    mlflow.set_tracking_uri(os.getenv("SECRET_HOST"))
+
     if args.mode == "train":
         # Load the entire dataset
         dataset = Dataset(root_dir=args.data_path, transform=transform, mode=args.mode)
@@ -43,7 +47,8 @@ def main(args):
         criterion = torch.nn.CrossEntropyLoss()
 
         # Define K-fold cross-validation with k=5
-        k_folds = 5
+        # k_folds = 5
+        k_folds = 2
         kfold = KFold(n_splits=k_folds, shuffle=True)
 
         # K-fold Cross Validation model evaluation
@@ -98,7 +103,7 @@ if __name__ == "__main__":
                         help="Mode to run: 'train' or 'test'")
     parser.add_argument("--data_path", type=str, required=True,
                         help="Path to dataset")
-    parser.add_argument("--model_path", type=str, default="./models/",
+    parser.add_argument("--model_path", type=str, default="./models/cnn_resnet18_freeze_backbone_False.pth",
                         help="Directory to save or load the model")
 
     args = parser.parse_args()

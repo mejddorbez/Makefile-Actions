@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "trim-cistern-442608-e3",
+  "private_key_id": "888e236dcbb89ea178484ea0e589696c97612a9a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDId7qXgbBObfaZ\nz3fWNFkZLUPi8bagUWjtI+LocQQ20tVyy0r6bCR6mZknOrPFgpOFyvPIHSpX7FG8\n+udIssBHgJgBruSBnVqWWoYyxiA6sRQCxAzqb+W/8Fcx5EFGgvS9ZkXbWJ1iVzbE\nE3JW4LrG0kopw1Etr+MyEzLmiVEsZheJHFKMyAfXVG5mEfFmiBWfHZaIzsZHIuxQ\n/CLJX9klvrr0wdaqvRwgV6AsDjEWWOXYFaJfJcoDNYKQ9Nhev4onsIRYhXEhzfgv\nb+xf4IVduN2sB0Okbu+SKfCVF1HvL0t5dj+yKRfpTtCby/WDSvbhGfvcq8WrkoRN\nNtgW2PTvAgMBAAECggEABpit+qNJVmNW7Hu/sTw6vFHZfIPAoyjan4cBRe3GGjm4\nzVS0LGZXkvMv73MGjFa+HPZvLCQNiyQbEnFdH+7F1fR8y/1hxoQTgYQMC2qqj9PY\n2ThzRlmVQUoazGj63uObQwo0/UE+uIgvJKeRKRuu+bDcwOAM8Uhq3PB1ydE16xSI\nAyQgy6xTyriPgEMzpK9Rd6sjm1zDXE7zYynLvwJE5isbldKvwiVbOlOabyiK1Fb1\nKlLssLC50oQq60cHqUkT0M3yRVewtJGOJHn7DpzkccZWSGw6wZmAPFKGES9ZVczL\nLaA5gvzvHjA0fIpms+/IUeBEDrE4tR3+BjEC2vqv8QKBgQDnoZZ0J+ZiqwGH6NyH\nDJ/gqkPg8VjKFSrifSFHbXHoQbn9FpnC2v6DnEGkEikMbuXRRsl4niU60Ie/5Vnj\nycXNHaBuI7D5QMmRzlQKmWZQAxkGYMF2WwnG7FYPcKJ7jjOnFuSBA1u3TICQD0UW\n22zMsChgxHs/JN9c8QqARxJffwKBgQDdjtRI5ryNXapsW0rpzQB3FHlm8g1+PAW5\n6+50db9MbJg1tvMfZ9vfe7yftolwwwQGleqj8/+bsXaRSwpBDbxLJnaGePmAGUFV\nOMq9M4Tx6Ajz31zt5KNxM3pxpeuqJDAOOa9YzbueFxlQ5uEPpKoUY5BUhp3t8UdJ\nw69VvD4ikQKBgQCcOcYqLccbgU8VBZ/HjmI+u1fw3ZcPJVu5SsApVs3e4oW5B4dJ\nfz7uMXOsX3tEIX/ruJymN7PQiVklumD4W9yHTZYo8vWoB2RsbQcN5wy0poI4ZQXW\n9+wOONSKsWNFhlGcPrp7sXIonPaRM1tb4T7uh1mUerDNk+b63rBAeK8RrQKBgBmn\n4XMzrN/d2c9EXw9l2sjvSQOfweo9PxiBdpJr1CQgaxvFPLAFUdO2O2hvNckl/ABb\nOdmUdqPrz+QRQXW5BnXZVV5LAfFQe11H/0obfiiZCvhahCNUF40TPfmNEhYYrKvp\nCCILaM9ss1TH94XdNoi34s227PDRwMSM8W/HJZbRAoGBAJEgORm+UJ+CTfvRq0uR\nQ04DcQZRqm8BCgrBUO4bD9mXzDa4eBLW+nHCUMtmXaaSvgMighutFDMgdTTBIs0Q\n0FMcPCNHxewdw3fEpQ51Ryd/TlHfiKrPpUgw2HyqiY7porv/Ken/sSI1d7j1tMje\ncLy8lYgAi20IpLJ2YpRLOCui\n-----END PRIVATE KEY-----\n",
+  "client_email": "mejd-dorbez@trim-cistern-442608-e3.iam.gserviceaccount.com",
+  "client_id": "104256663834937018098",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mejd-dorbez%40trim-cistern-442608-e3.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
