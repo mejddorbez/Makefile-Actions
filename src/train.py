@@ -8,7 +8,7 @@ import torch
 from torch.cuda.amp import GradScaler, autocast
 from torch.optim.lr_scheduler import StepLR
 
-from src.utils import plot_loss_curves
+from utils import plot_loss_curves
 
 
 
