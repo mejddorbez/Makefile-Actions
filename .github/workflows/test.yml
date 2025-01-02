@@ -59,7 +59,7 @@ jobs:
 
       - name: DVC Pull Data
         run: |
-          uv run dvc pull
+          uv run dvc pull --force
       # Install dependencies
       - name: Install dependencies
         run: |
