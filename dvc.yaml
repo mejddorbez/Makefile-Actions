@@ -2,3 +2,9 @@ stages:
   f:
     cmd: train_model -d data/train/ -o models/cnn_resnet18_freeze_backbone_False.pth
       python src/train.py
+  train_model:
+    cmd: python src/train.py
+    deps:
+    - data/train
+    outs:
+    - models/cnn_resnet18_freeze_backbone_False.pth
