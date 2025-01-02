@@ -5,6 +5,6 @@ stages:
   train_model:
     cmd: python src/train.py
     deps:
-    - data/train
+    - data/train/
     outs:
     - models/cnn_resnet18_freeze_backbone_False.pth
