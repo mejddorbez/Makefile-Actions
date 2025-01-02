@@ -32,6 +32,7 @@ jobs:
       # Install pip
       - name: Install pip
         run: |
+          echo ${{ github.repository }}
           python -m pip install --upgrade pip
       # Install dvc
       - name: Install dvc
