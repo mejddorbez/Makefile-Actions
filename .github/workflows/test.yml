@@ -70,7 +70,7 @@ jobs:
       # Run CNN Inference
       - name: Run tests
         run: |
-          mkdir -p /home/runner/work/Makefile-Actions/Makefile-Actionsplots
+          mkdir -p /home/runner/work/Makefile-Actions/Makefile-Actions/plots
           python3 main.py --mode test --data_path ./data/test/ --model_path ./models/cnn_resnet18_freeze_backbone_False.pth
 
       # Train CNN Model with MLflow
