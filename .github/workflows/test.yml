@@ -32,7 +32,8 @@ jobs:
       # Install pip
       - name: Install pip
         run: |
-          echo ${{ github.repository }}
+          repo_name=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+          echo "Repository name is: $repo_name"
           python -m pip install --upgrade pip
       # Install dvc
       - name: Install dvc
@@ -69,7 +70,7 @@ jobs:
       # Run CNN Inference
       - name: Run tests
         run: |
-          mkdir -p /home/runner/work/${{ github.repository }}/${{ github.repository }}/plots
+          mkdir -p /home/runner/work/${{ repo_name }}/${{ repo_name }}/plots
           python3 main.py --mode test --data_path ./data/test/ --model_path ./models/cnn_resnet18_freeze_backbone_False.pth
 
       # Train CNN Model with MLflow
@@ -79,5 +80,5 @@ jobs:
           #MLFLOW_TRACKING_TOKEN: ${{ secrets.MLFLOW_TRACKING_TOKEN }}
         run: |
           echo "MLFLOW_TRACKING_URI=${{ secrets.MLFLOW_TRACKING_URI}}"
-          mkdir -p /home/runner/work/${{ github.repository }}/${{ github.repository }}/plots
+          mkdir -p /home/runner/work/${{ repo_name }}/${{ repo_name }}/plots
           python3 train.py --data_path ./data/train/ --epochs 50 --learning_rate 0.001 --model_dir ./models --plot_dir ./plots
