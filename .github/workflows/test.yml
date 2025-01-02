@@ -44,8 +44,10 @@ jobs:
       - name: Create credentials.json
         env:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+          repo_name: $(echo "${{ github.repository }}" | cut -d'/' -f2)
         run: |
           echo $GDRIVE_CREDENTIALS_DATA > credentials.json
+          echo "Repository name is: $repo_name"
       # Configure DVC Remote
       - name: Configure DVC Remote
         run: |
@@ -68,7 +70,7 @@ jobs:
       # Run CNN Inference
       - name: Run tests
         run: |
-          mkdir -p /home/runner/work/Makefile-Actions/Makefile-Actions/plots
+          mkdir -p /home/runner/work/$repo_name/$repo_name/plots
           python3 main.py --mode test --data_path ./data/test/ --model_path ./models/cnn_resnet18_freeze_backbone_False.pth
 
       # Train CNN Model with MLflow
@@ -78,5 +80,5 @@ jobs:
           #MLFLOW_TRACKING_TOKEN: ${{ secrets.MLFLOW_TRACKING_TOKEN }}
         run: |
           echo "MLFLOW_TRACKING_URI=${{ secrets.MLFLOW_TRACKING_URI}}"
-          mkdir -p /home/runner/work/Makefile-Actions/Makefile-Actions/plots
+          mkdir -p /home/runner/work/$repo_name/$repo_name/plots
           python3 src/train.py --data_path ./data/train/ --epochs 50 --learning_rate 0.001 --model_dir ./models --plot_dir ./plots
