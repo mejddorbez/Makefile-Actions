@@ -32,7 +32,7 @@ jobs:
       # Install pip
       - name: Install pip
         run: |
-          repo_name=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+          export repo_name=$(echo "${{ github.repository }}" | cut -d'/' -f2)
           echo "Repository name is: $repo_name"  # Use the shell variable directly here
           python -m pip install --upgrade pip
       # Install dvc
