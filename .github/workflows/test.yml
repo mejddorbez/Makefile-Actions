@@ -42,12 +42,12 @@ jobs:
 
       # DVC
       - name: Create credentials.json
-        env:
-          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
-          repo_name: echo "${{ github.repository }}" | cut -d'/' -f2
-        run: |
-          echo $GDRIVE_CREDENTIALS_DATA > credentials.json
-          echo "Repository name is: $repo_name"
+      env:
+        GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+      run: |
+        export repo_name=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+        echo $GDRIVE_CREDENTIALS_DATA > credentials.json
+        echo "Repository name is: $repo_name"
       # Configure DVC Remote
       - name: Configure DVC Remote
         run: |
