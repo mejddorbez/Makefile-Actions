@@ -38,16 +38,12 @@ jobs:
         run: |
           pip install dvc==3.42.0
           pip install dvc-gdrive==3.0.1 
-
-
       # DVC
       - name: Create credentials.json
         env:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
-          export REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
           echo $GDRIVE_CREDENTIALS_DATA > credentials.json
-          echo "Repository name is: $REPO_NAME"
       # Configure DVC Remote
       - name: Configure DVC Remote
         run: |
@@ -58,7 +54,6 @@ jobs:
           uv run dvc remote modify --local gdrive_remote gdrive_service_account_json_file_path credentials.json
           uv run dvc remote modify gdrive_remote gdrive_use_service_account true
           uv run dvc remote modify gdrive_remote gdrive_acknowledge_abuse true
-
       - name: DVC Pull Data
         run: |
           uv run dvc pull
@@ -66,15 +61,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt 
-
       # Run CNN Inference
       - name: Run tests
         run: |
-          mkdir -p "/home/runner/work/$REPO_NAME/$REPO_NAME/plots"
-          ls /home/runner/work -l
+          mkdir -p plots
           python3 main.py --mode test --data_path ./data/test/ --model_path ./models/cnn_resnet18_freeze_backbone_False.pth
-          
-
       # Train CNN Model with MLflow
       - name: Train CNN with MLflow
         env:
@@ -82,5 +73,5 @@ jobs:
           #MLFLOW_TRACKING_TOKEN: ${{ secrets.MLFLOW_TRACKING_TOKEN }}
         run: |
           echo "MLFLOW_TRACKING_URI=${{ secrets.MLFLOW_TRACKING_URI}}"
-          mkdir -p "/home/runner/work/$REPO_NAME/$REPO_NAME/plots"
+          mkdir -p plots
           python3 -m src.train --data_path ./data/train/ --epochs 50 --learning_rate 0.001 --model_dir ./models --plot_dir ./plots
