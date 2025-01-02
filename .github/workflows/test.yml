@@ -71,7 +71,7 @@ jobs:
       - name: Run tests
         run: |
           mkdir -p "/home/runner/work/$REPO_NAME/$REPO_NAME/plots"
-          ls -l
+          ls /home/runner/work -l
           python3 main.py --mode test --data_path ./data/test/ --model_path ./models/cnn_resnet18_freeze_backbone_False.pth
           
 
