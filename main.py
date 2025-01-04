@@ -30,6 +30,7 @@ def main(args):
     # Initialize the CNN model
     model = Classifier(len(CLASS_NAMES), backbone=BACKBONE, freeze_backbone=FREEZE_BACKBONE)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print('cuda' if torch.cuda.is_available() else 'cpu')
     model.to(device)
 
     # MLflow URI from environment variables
