@@ -35,6 +35,7 @@ def main(args):
 
     # MLflow URI from environment variables
     mlflow.set_tracking_uri(os.getenv("SECRET_HOST"))
+    print(os.getenv("SECRET_HOST"))
 
     if args.mode == "train":
         # Load the entire dataset
